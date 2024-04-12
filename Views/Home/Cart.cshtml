@@ -1,0 +1,74 @@
+@model List<Carrello>;
+@{
+    ViewData["Title"] = "Cart";
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<style>
+    th,td{
+        color: white;
+    }
+    h1{
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+<div class="container">
+
+    <h1 class="h2">Il tuo Carrello</h1>
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Quantita</th>
+                    <th scope="col">Articolo</th>
+                    <th scope="col">Immagine</th>
+                    <th scope="col">Prezzo</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Quantita</td>
+                        <td>@item.Articolo</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.Immagine))
+                            {
+                                <img src="@item.Immagine" alt="@item.Articolo Image" class="img-thumbnail img-fluid"
+                                    style="height: 80px; object-fit: cover;">
+                            }
+                        </td>
+                        <td>@item.Prezzo.ToString("C")</td>
+                        <td>
+                            <form method="post" asp-action="Remove" asp-controller="Home"
+                                onsubmit="return confirm('Sei sicuro di voler rimuovere questo articolo?')">
+                                <input type="hidden" name="carrelloId" value="@item.CarrelloId">
+                                <button type="submit" class="btn btn-sm btn-danger">Rimuovi</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-end"><strong>Prezzo Totale: </strong> @Model.Sum(item => item.Prezzo * item.Quantita).ToString("C")
+        </div>
+        <a href="/Home/Order" class="btn btn-sm btn-primary"
+            onclick="return confirm('Vuoi Procedere?')">Conferma Ordine</a>
+    }
+    else
+    {
+        <div class="alert alert-secondary" role="alert">
+            Carrello Vuoto
+        </div>
+    }
+</div>

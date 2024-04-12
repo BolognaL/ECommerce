@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Quadri";
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<style>
+    .product {
+        text-align: center;
+    }
+
+    .product img {
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    h1{
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Lucky Boy Sirano</h1>
+</div>
+
+
+<div class="container">
+    
+    <div class="product">
+        <h5>BASTAVA GIRARE IL MATERASSO,<br>PER SMETTERE DI FARE INCUBI</h5>
+        <img src="/img/img1.jpg" alt="BASTAVA GIRARE IL MATERASSO, PER SMETTERE DI FARE INCUBI" class="zoom-img">
+        <p><strong>Prezzo: €200,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="BASTAVA GIRARE IL MATERASSO, PER SMETTERE DI FARE INCUBI">
+            <input type="hidden" name="Prezzo" value="200,00">
+            <input type="hidden" name="Immagine" value="/img/img1.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+    
+    <div class="product">
+        <h5>ORA SOLO I RICORDI <br>MI TENGONO A GALLA</h5>
+        <img src="/img/img2.jpg" alt="ORA SOLO I RICORDI MI TENGONO A GALLA" class="zoom-img">
+        <p><strong>Prezzo: €230,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="ORA SOLO I RICORDI MI TENGONO A GALLA">
+            <input type="hidden" name="Prezzo" value="230,00">
+            <input type="hidden" name="Immagine" value="/img/img2.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+    
+    <div class="product">
+        <h5>END OF THE NIGHT <br>at "FONDAMENTA NANI"</h5>
+        <img src="/img/img3.jpg" alt="END OF THE NIGHT at 'FONDAMENTA NANI'" class="zoom-img">
+        <p><strong>Prezzo: €240,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="END OF THE NIGHT at 'FONDAMENTA NANI'">
+            <input type="hidden" name="Prezzo" value="240,00">
+            <input type="hidden" name="Immagine" value="/img/img3.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+    
+    <div class="product">
+        <h5>POSITIVELY NO GAMBLING</h5>
+        <br>
+        <img src="/img/img4.jpg" alt="POSITIVELY NO GAMBLING" class="zoom-img">
+        <p><strong>Prezzo: €220,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="POSITIVELY NO GAMBLING">
+            <input type="hidden" name="Prezzo" value="220,00">
+            <input type="hidden" name="Immagine" value="/img/img4.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+    
+    <div class="product">
+        <h5>BANDIT'S MEMORIES</h5>
+        <img src="/img/img5.jpg" alt="BANDIT'S MEMORIES" class="zoom-img">
+        <p><strong>Prezzo: €219,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="BANDIT'S MEMORIES">
+            <input type="hidden" name="Prezzo" value="219,00">
+            <input type="hidden" name="Immagine" value="/img/img5.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+   
+    <div class="product">
+        <h5>LA PIADA E LA GATTA</h5>
+        <img src="/img/img6.jpg" alt="LA PIADA E LA GATTA" class="zoom-img">
+        <p><strong>Prezzo: €210,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="LA PIADA E LA GATTA">
+            <input type="hidden" name="Prezzo" value="210,00">
+            <input type="hidden" name="Immagine" value="/img/img6.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+
+
+
+
+   
+    <div class="product">
+        <h5>LOTTA D'ASSI</h5>
+        <br>
+        <img src="/img/img7.jpg" alt="LOTTA D'ASSI" class="zoom-img">
+        <p><strong>Prezzo: €230,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="LOTTA D'ASSI">
+            <input type="hidden" name="Prezzo" value="230,00">
+            <input type="hidden" name="Immagine" value="/img/img7.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+    
+    <div class="product">
+        <h5>SOME TIME ALONE <br>WITH HER OWN THOUGHTS</h5>
+        <img src="/img/img8.jpg" alt="SOME TIME ALONE WITH HER OWN THOUGHTS" class="zoom-img">
+        <p><strong>Prezzo: €320,00</strong></p>
+        <form method="post" action="/Home/AddToCart">
+            <input type="hidden" name="Articolo" value="SOME TIME ALONE WITH HER OWN THOUGHTS">
+            <input type="hidden" name="Prezzo" value="320,00">
+            <input type="hidden" name="Immagine" value="/img/img8.jpg">
+            <button type="submit">Aggiungi al Carrello</button>
+        </form>
+    </div>
+
+</div>

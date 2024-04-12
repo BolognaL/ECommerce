@@ -1,0 +1,62 @@
+@model Registrazione;
+@{
+    ViewData["Title"] = "Registrati";
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<style>
+    h1, h2{
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+
+<div class="text-center" style="min-width: 500px;">
+    <h1 class="display-4">Registrati</h1>
+    <form class="m-2" method="post" asp-action="SignUp" asp-controller="Home">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for=Nome>Inserisci il tuo Nome</label>
+            <input asp-for=Nome type="text" class="form-control w-50 mx-auto">
+        </div>
+        <div class="form-group">
+            <label asp-for=Cognome>Inserisci il tuo Cognome</label>
+            <input asp-for=Cognome type="text" class="form-control w-50 mx-auto">
+        </div>
+        <div class="form-group">
+            <label asp-for=NomeUtente>Inserisci il tuo Nome Utente</label>
+            <input asp-for=NomeUtente type="text" class="form-control w-50 mx-auto">
+        </div>
+        <div class="form-group">
+            <label asp-for=Email>Inserisci la tua Email</label>
+            <input asp-for=Email type="text" class="form-control w-50 mx-auto">
+        </div>
+        <div class="form-group">
+            <label asp-for=DataNascita>Inserisci la tua Data di Nascita</label>
+            <input asp-for=DataNascita type="date" class="form-control w-50 mx-auto">
+        </div>
+        <div class="form-group">
+            <label asp-for=Password>Inserisci la tua Password</label>
+            <input asp-for="Password" type="password" class="form-control w-50 mx-auto" id="passwordInput">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Registrati</button>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Hai già un account? <a href="/Home/SignIn">Accedi</a>.</p>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
